@@ -1,0 +1,66 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<dom-module id="pvl-image-card">
+  <style>
+    #pvl-image-card {
+    }
+    #pvl-image-card-container {
+      padding: 15px;
+    }
+    #my-button {
+      background: #FF5722;
+      color: #fff;
+    }
+    :host {
+      margin: 15px;
+      display: inline-block;
+    }
+
+  </style>
+	<template>
+    <div id="pvl-image-card">
+      <paper-material elevation="3">
+        <div id="pvl-image-card-container">
+          <content></content>
+          <div class="horizontal center-justified layout">
+            <iron-image style="width:300px; height:300px;" sizing="contain" src="{{ image }}" preload fade></iron-image>
+          </div>
+          <div class="horizontal center-justified layout">
+            <h2>{{ title }}</h2>
+          </div>
+          <div class="horizontal center-justified layout">
+            <paper-button id="my-button" raised>{{ button_text }}</paper-button>
+          </div>        
+        </div>
+      </paper-material>      
+    </div>
+	</template>
+</dom-module>
+
+<script>
+    Polymer({
+      is: 'pvl-image-card',
+      properties: {
+        image: {
+          type: String,
+          value: "/images/products/harina_de_platano.png"
+        },
+        title: {
+          type: String,
+          value: "Harina de Plátano"
+        },
+        button_text: {
+          type: String,
+          value: "Ver más"
+        },
+      }
+    });
+</script>
